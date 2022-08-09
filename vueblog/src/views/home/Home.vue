@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <top-bar class="top-bar"></top-bar>
-		<div @click="aaa">123</div>
     <div class="top-content">
       <!-- navbar -->
       <!--      <div class="top-navbar">-->
@@ -17,42 +16,47 @@
       <!--          </ul>-->
       <!--        </div>-->
       <!--      </div>-->
-      <div class="top-navbar">
-        <ul class="li-content">
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端前端前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-          <li><a href="#">前端</a></li>
-        </ul>
-      </div>
+<!--      <div class="top-navbar">-->
+<!--        <ul class="li-content">-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端前端前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--          <li><a href="#">前端</a></li>-->
+<!--        </ul>-->
+<!--      </div>-->
 
       <div class="main-container">
         <div class="grid-content">
           <Swiper class="swiper" />
           <div class="main-right-item" v-for="(item, index) in 6" :key="index">
+						<router-link
+							:to="{ name: 'BlogDetail', params: { blogId: blogList[index].id } }"
+							target="_blank"
+						>
             <div class="item-img">
-              <img src="../../assets/img/home/003.jpg" alt="" />
+              <img :src="blogList[index].coverImage?blogList[index].coverImage:require('../../assets/img/home/003.jpg')" alt="" />
             </div>
             <div class="item-title">
-              标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题标题
+              {{blogList[index].title}}
             </div>
-            <div class="item-name">作者</div>
+            <div class="item-name">{{ blogList[index].authorName }}</div>
+						</router-link>
           </div>
         </div>
         <div class="roll-btn">
@@ -176,41 +180,41 @@
 <!--          </div>-->
 <!--        </div>-->
         <!--        卡片2-->
-        <div class="template">
-          <div class="template-title">
-            <span>热更作者</span>
-          </div>
-          <div class="template-cont">
-            <div class="recommendation" v-for="item in 5">
-              <a target="_blank" href="#" class="recommendation-img">
-                <img src="../../assets/img/home/default_avatar.jpg" alt="" />
-              </a>
-              <div class="recommendation-cont">
-                <div><a target="_blank" href="#">大哥</a></div>
-                <div class="intro">这月已更博55篇</div>
-              </div>
-              <div class="recommendation-btn">关注</div>
-            </div>
-          </div>
-        </div>
-        <!--        卡片3-->
-        <div class="template">
-          <div class="template-title">
-            <span>作者推荐</span>
-          </div>
-          <div class="template-cont">
-            <div class="recommendation" v-for="item in 5">
-              <a target="_blank" href="#" class="recommendation-img">
-                <img src="../../assets/img/home/default_avatar.jpg" alt="" />
-              </a>
-              <div class="recommendation-cont">
-                <div><a target="_blank" href="#">大哥</a></div>
-                <div class="intro">此人很懒，什么都没有写</div>
-              </div>
-              <div class="recommendation-btn">关注</div>
-            </div>
-          </div>
-        </div>
+<!--        <div class="template">-->
+<!--          <div class="template-title">-->
+<!--            <span>热更作者</span>-->
+<!--          </div>-->
+<!--          <div class="template-cont">-->
+<!--            <div class="recommendation" v-for="item in 5">-->
+<!--              <a target="_blank" href="#" class="recommendation-img">-->
+<!--                <img src="../../assets/img/home/default_avatar.jpg" alt="" />-->
+<!--              </a>-->
+<!--              <div class="recommendation-cont">-->
+<!--                <div><a target="_blank" href="#">大哥</a></div>-->
+<!--                <div class="intro">这月已更博55篇</div>-->
+<!--              </div>-->
+<!--              <div class="recommendation-btn">关注</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash;        卡片3&ndash;&gt;-->
+<!--        <div class="template">-->
+<!--          <div class="template-title">-->
+<!--            <span>作者推荐</span>-->
+<!--          </div>-->
+<!--          <div class="template-cont">-->
+<!--            <div class="recommendation" v-for="item in 5">-->
+<!--              <a target="_blank" href="#" class="recommendation-img">-->
+<!--                <img src="../../assets/img/home/default_avatar.jpg" alt="" />-->
+<!--              </a>-->
+<!--              <div class="recommendation-cont">-->
+<!--                <div><a target="_blank" href="#">大哥</a></div>-->
+<!--                <div class="intro">此人很懒，什么都没有写</div>-->
+<!--              </div>-->
+<!--              <div class="recommendation-btn">关注</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
         <!--        关于我们-->
         <div class="template">
           <div class="template-title">
@@ -280,10 +284,6 @@ import RecommendArticleItem from "@/views/home/childComps/RecommendArticleItem";
 import NewArticleItem from "@/views/home/childComps/NewArticleItem";
 import FollowArticleItem from "@/views/home/childComps/FollowArticleItem";
 
-
-import qs from "qs"
-
-
 export default {
   name: "Home",
   components: {
@@ -295,30 +295,30 @@ export default {
   },
   data() {
     return {
-			aaa1:{
-				Description:"00",
-			},
+			page: 1,
       activeName: "second",
+			blogList:[],
     };
   },
+	created(){
+		this.getData()
+		// console.log("获取到的元素",blogList)
+	},
   methods: {
-		// aaa() {
-		// 	this.$axios
-		// 		.post("/easydata-config/rptDataCataLog/v1.0/queryRptDataCatalogTree", qs.stringify(this.aaa1))
-		// 		.then((res) => {
-		// 			console.log(res)
-		// 		})
-		// },
-		aaa() {
-			this.$axios
-				.post("/easydata-config/rptDataCataLog/v1.0/queryRptDataCatalogTree")
-				.then((res) => {
-					console.log(res)
-				})
-		},
     handleClick(tab, event) {
       console.log(tab, event);
     },
+		getData(){
+			this.$axios
+				.get("/blog/list/recommend?page=" + this.page, {
+					headers: { token: localStorage.getItem("token") },
+				})
+				.then((res) => {
+					if (res.data.data.records.length) {
+						this.blogList = this.blogList.concat(res.data.data.records);
+					}
+				});
+		}
   },
 };
 </script>
@@ -329,7 +329,7 @@ export default {
   position: relative;
   width: 1380px;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 25px ;
 }
 .grid-content {
   display: grid;
@@ -381,7 +381,7 @@ export default {
 .main-container .roll-btn {
   position: absolute;
   top: 0;
-  left: 100%;
+  left: calc(100% - 20px);
   z-index: 2;
   transform: translateX(10px) translateY(15px);
 }

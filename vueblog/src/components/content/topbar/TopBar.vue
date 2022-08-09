@@ -5,13 +5,14 @@
         <div class="toolbar-container-left">
           <div class="toolbar-logo toolbar-subMenu-box csdn-toolbar-fl">
             <a
-              data-report-click='{"spm":"3001.4476"}'
-              data-report-query="spm=3001.4476"
-              href="https://www.csdn.net/"
-              ><img title="bk首页" src="../../../assets/img/logo.png"
-            /></a>
+							data-report-click='{"spm":"3001.4476"}'
+							data-report-query="spm=3001.4476"
+							href="http://scblogs.cn/"
+						>
+							<img id="icon" title="首页" src="../../../assets/img/long-logo.png"/>
+						</a>
           </div>
-          <ul class="toolbar-menus csdn-toolbar-fl">
+          <ul id="head-nav" class="toolbar-menus csdn-toolbar-fl">
 <!--            <li class="" title="阅读深度、前沿文章">-->
 <!--              <a-->
 <!--                data-report-click='{"mod":"popu_336","dest":"https://blog.csdn.net/nav/cloud-native","spm":"3001.4477"}'-->
@@ -46,9 +47,9 @@
 
             <li class="" title="技术问题，有问必答">
               <a
-                data-report-click='{"mod":"popu_336","dest":"https://ask.csdn.net/","spm":"3001.4492"}'
-                data-report-query="spm=3001.4492"
-                href="https://ask.csdn.net/"
+								data-report-click='{"mod":"popu_336","dest":"http://scblogs.cn/","spm":"3001.4492"}'
+								data-report-query="spm=3001.4492"
+								href="http://scblogs.cn/"
               >
                 问答
                 <!-- 校园风采 -->
@@ -66,9 +67,9 @@
 
             <li class="" title="看看美丽的校园">
               <a
-                data-report-click='{"mod":"popu_336","dest":"https://edu.csdn.net/","spm":"3001.4482"}'
-                data-report-query="spm=3001.4482"
-                href="https://edu.csdn.net/"
+								data-report-click='{"mod":"popu_336","dest":"http://scblogs.cn/","spm":"3001.4482"}'
+								data-report-query="spm=3001.4482"
+								href="http://scblogs.cn/"
               >
                 校园风采
               </a>
@@ -567,5 +568,14 @@ export default {
 }
 .el-dropdown-link {
   cursor: pointer;
+}
+#icon{
+	display: inline-block;
+	wdith:100px;
+	height: 30px;
+	margin-top: 5px;
+}
+#head-nav{
+
 }
 </style>

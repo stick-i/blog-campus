@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.multipart.MultipartFile;
 
-@FeignClient(value = "resource-server")
+/**
+ * @author 阿杆
+ */
+@FeignClient(value = "resource-server", fallback = ResourceClientResolver.class)
 public interface ResourceClient {
 
 	/**
@@ -35,6 +38,7 @@ public interface ResourceClient {
 	 * 通过院校代码获取名称
 	 *
 	 * @param schoolCode 院校代码
+	 * @return 高校名称
 	 */
 	@GetMapping("/resource/university/name")
 	RestResult<String> getUniversityName(@RequestParam Integer schoolCode);
