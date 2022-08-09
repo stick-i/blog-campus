@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <top-bar class="top-bar"></top-bar>
+		<div @click="aaa">123</div>
     <div class="top-content">
       <!-- navbar -->
       <!--      <div class="top-navbar">-->
@@ -279,6 +280,10 @@ import RecommendArticleItem from "@/views/home/childComps/RecommendArticleItem";
 import NewArticleItem from "@/views/home/childComps/NewArticleItem";
 import FollowArticleItem from "@/views/home/childComps/FollowArticleItem";
 
+
+import qs from "qs"
+
+
 export default {
   name: "Home",
   components: {
@@ -290,10 +295,27 @@ export default {
   },
   data() {
     return {
+			aaa1:{
+				Description:"00",
+			},
       activeName: "second",
     };
   },
   methods: {
+		// aaa() {
+		// 	this.$axios
+		// 		.post("/easydata-config/rptDataCataLog/v1.0/queryRptDataCatalogTree", qs.stringify(this.aaa1))
+		// 		.then((res) => {
+		// 			console.log(res)
+		// 		})
+		// },
+		aaa() {
+			this.$axios
+				.post("/easydata-config/rptDataCataLog/v1.0/queryRptDataCatalogTree")
+				.then((res) => {
+					console.log(res)
+				})
+		},
     handleClick(tab, event) {
       console.log(tab, event);
     },
